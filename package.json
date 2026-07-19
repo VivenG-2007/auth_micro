@@ -1,0 +1,42 @@
+{
+  "name": "auth-microservice",
+  "version": "1.0.0",
+  "description": "Reusable, production-grade authentication microservice (Node.js + Express + MongoDB Atlas + Redis). Change PROJECT_NAME in .env to reuse across any project — a dedicated database is created automatically.",
+  "main": "server.js",
+  "type": "commonjs",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "nodemon server.js",
+    "lint": "eslint .",
+    "seed:admin": "node src/utils/seedAdmin.js"
+  },
+  "keywords": ["auth", "microservice", "jwt", "mongodb", "redis", "express"],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "cookie-parser": "^1.4.6",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "express-mongo-sanitize": "^2.2.0",
+    "express-validator": "^7.1.0",
+    "helmet": "^7.1.0",
+    "hpp": "^0.2.3",
+    "ioredis": "^5.4.1",
+    "jsonwebtoken": "^9.0.2",
+    "mongoose": "^8.5.1",
+    "morgan": "^1.10.0",
+    "nodemailer": "^6.9.14",
+    "rate-limiter-flexible": "^5.0.3",
+    "uuid": "^9.0.1",
+    "winston": "^3.13.1",
+    "xss-clean": "^0.1.4"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.4"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}

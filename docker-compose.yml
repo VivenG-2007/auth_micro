@@ -1,0 +1,27 @@
+version: '3.8'
+
+services:
+  auth-service:
+    build: .
+    container_name: auth-microservice
+    restart: unless-stopped
+    ports:
+      - '${PORT:-5000}:5000'
+    env_file:
+      - .env
+    environment:
+      - REDIS_URI=redis://redis:6379
+    depends_on:
+      - redis
+
+  redis:
+    image: redis:7-alpine
+    container_name: auth-redis
+    restart: unless-stopped
+    ports:
+      - '6379:6379'
+    volumes:
+      - redis-data:/data
+
+volumes:
+  redis-data:
