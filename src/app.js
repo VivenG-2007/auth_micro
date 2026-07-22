@@ -56,6 +56,11 @@ app.use(
 // ---- Global rate limit (coarse safety net, per IP) ----
 app.use('/api', apiRateLimitMiddleware);
 
+// ---- Root route ----
+app.get('/', (req, res) => {
+  res.send('Auth Microservice is running 🚀');
+});
+
 // ---- Health check ----
 app.get('/health', (req, res) => {
   res.status(200).json({
