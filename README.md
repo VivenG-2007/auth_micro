@@ -3,7 +3,6 @@
 A production-grade, **reusable** authentication microservice built with Node.js, Express, MongoDB Atlas, and Redis. Designed to be dropped into any project as a standalone auth API.
 
 ## Why it's reusable
-
 Every project-specific behaviour is driven by **one** environment variable: `PROJECT_NAME`.
 
 - **MongoDB**: on connect, the service appends `PROJECT_NAME` to your Atlas connection string as the database name (`db.js`). MongoDB creates the database lazily on the first write — so registering your first user in a new project automatically provisions an isolated database. No manual Atlas setup per project.
